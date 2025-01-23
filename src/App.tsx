@@ -1,11 +1,16 @@
+import { Route, Routes } from '@everybase/router';
 import './App.css';
+
+const routes: Route[] = [
+  {
+    index: true,
+    lazy: () => import('./routes/Home')
+  }
+]
 
 const App = () => {
   return (
-    <div className="content">
-      <h1>Rsbuild with React</h1>
-      <p>Start building amazing things with Rsbuild.</p>
-    </div>
+    <Routes routes={routes} />
   );
 };
 
